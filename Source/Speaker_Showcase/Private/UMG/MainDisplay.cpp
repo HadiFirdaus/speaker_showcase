@@ -7,7 +7,6 @@
 #include "AudioDevice.h"
 #include "ActiveSound.h"
 #include "Logic.h"
-#include "MainDisplay.h"
 
 UMainDisplay::UMainDisplay(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
@@ -48,16 +47,16 @@ void UMainDisplay::InitializeMainDisplayClass_Implementation(ALogic * LogicRef)
 void UMainDisplay::PlayButtonAudio(USoundBase * ButtonAudio)
 {
 	UWorld* ThisWorld = GEngine->GetWorldFromContextObject(this, EGetWorldErrorMode::LogAndReturnNull);
-	if (ThisWorld) {
-		FAudioDevice* AudioDevice = ThisWorld->GetAudioDevice();
-		if (AudioDevice) {
-			FActiveSound NewActiveSound;
-			NewActiveSound.SetSound(ButtonAudio);
-			NewActiveSound.SetWorld(ThisWorld);
-			NewActiveSound.Priority = ClickAudio->Priority;
-			AudioDevice->AddNewActiveSound(NewActiveSound);
-		}
-	}
+	//if (ThisWorld) {
+	//	FAudioDevice* AudioDevice = ThisWorld->GetAudioDevice();
+	//	if (AudioDevice) {
+	//		FActiveSound NewActiveSound;
+	//		NewActiveSound.SetSound(ButtonAudio);
+	//		NewActiveSound.SetWorld(ThisWorld);
+	//		NewActiveSound.Priority = ClickAudio->Priority;
+	//		AudioDevice->AddNewActiveSound(NewActiveSound);
+	//	}
+	//}
 }
 
 FText UMainDisplay::GetSpeakerChoice() const
