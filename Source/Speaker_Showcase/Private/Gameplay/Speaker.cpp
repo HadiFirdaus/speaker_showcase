@@ -175,3 +175,8 @@ void ASpeaker::Dumb()
 		UE_LOG(LogTemp, Warning, TEXT("ArrayInt Contents: %s"), *ArrInt);
 	}
 }
+
+AActor* ASpeaker::GetSpeakerClass()
+{
+	return Speakers = this;
+}

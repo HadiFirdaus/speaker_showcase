@@ -5,8 +5,9 @@
 #include "Components/TextBlock.h"
 #include "Components/Button.h"
 #include "AudioDevice.h"
-#include "ActiveSound.h"
+//#include "ActiveSound.h"
 #include "Logic.h"
+#include "Speaker.h"
 
 UMainDisplay::UMainDisplay(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
@@ -46,14 +47,20 @@ void UMainDisplay::InitializeMainDisplayClass_Implementation(ALogic * LogicRef)
 
 void UMainDisplay::PlayButtonAudio(USoundBase * ButtonAudio)
 {
-	UWorld* ThisWorld = GEngine->GetWorldFromContextObject(this, EGetWorldErrorMode::LogAndReturnNull);
-	//if (ThisWorld) {
-	//	FAudioDevice* AudioDevice = ThisWorld->GetAudioDevice();
-	//	if (AudioDevice) {
+	//FAudioDeviceHandle AudioDeviceHandle = GetWorld()->GetAudioDevice();
+	//if (AudioDeviceHandle.IsValid())
+	//{
+	//	FAudioDevice* AudioDevice = AudioDeviceHandle.GetAudioDevice();
+	//	if (AudioDevice)
+	//	{
 	//		FActiveSound NewActiveSound;
 	//		NewActiveSound.SetSound(ButtonAudio);
-	//		NewActiveSound.SetWorld(ThisWorld);
-	//		NewActiveSound.Priority = ClickAudio->Priority;
+	//		NewActiveSound.SetWorld(GetWorld());
+	//		NewActiveSound.bIsUISound = true;
+	//		NewActiveSound.bAllowSpatialization = false;
+	//		NewActiveSound.Priority = ButtonAudio->Priority;
+	//		NewActiveSound.SetOwner(Speaker->GetSpeakerClass());
+
 	//		AudioDevice->AddNewActiveSound(NewActiveSound);
 	//	}
 	//}

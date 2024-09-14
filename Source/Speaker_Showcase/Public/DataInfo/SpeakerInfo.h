@@ -14,8 +14,6 @@ struct SPEAKER_SHOWCASE_API FSpeakerInfo : public FTableRowBase
 {
 	GENERATED_BODY()
 
-protected:
-
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "SpeakerInfo++")
 	FText LongDescription;
@@ -23,6 +21,4 @@ public:
 	FText ShortDescription;
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "SpeakerInfo++")
 	int32 Price;
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "SpeakerInfo++")
-	UDataTable* ComponentDataTable;
 };

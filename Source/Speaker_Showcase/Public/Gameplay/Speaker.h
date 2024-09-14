@@ -97,4 +97,11 @@ public:
 
 	UFUNCTION()
 	void Dumb();
+	
+	UFUNCTION()
+	class AActor* GetSpeakerClass();
+
+private:
+	UPROPERTY()
+	class AActor* Speakers;
 };
